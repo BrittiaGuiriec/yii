@@ -2006,16 +2006,19 @@ class CBaseActiveRelation extends CComponent
 /**
  * CStatRelation represents a statistical relational query.
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @version $Id$
+ * @version $Id: CActiveRecord.php 3533 2012-01-08 22:07:55Z mdomba $
  * @package system.db.ar
  */
-class CStatRelation extends CBaseActiveRelation
+class CStatRelation extends CHasOneRelation
 {
 	/**
 	 * @var string the statistical expression. Defaults to 'COUNT(*)', meaning
 	 * the count of child objects.
 	 */
 	public $select='COUNT(*)';
+
+	public $as;
+
 	/**
 	 * @var mixed the default value to be assigned to those records that do not
 	 * receive a statistical query result. Defaults to 0.
